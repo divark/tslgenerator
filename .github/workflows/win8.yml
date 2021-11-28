@@ -27,4 +27,4 @@ jobs:
 
     - name: Build project
       working-directory: ./Win8
-      run: msbuild TSLgenerator.vcxproj /p:configuration=debug
+      run: msbuild TSLgenerator.sln /p:configuration=debug
