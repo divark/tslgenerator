@@ -1,0 +1,18 @@
+name: Win32 CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      working-directory: ./Win32
+      run: NMAKE /f "TSLgenerator.mak"
