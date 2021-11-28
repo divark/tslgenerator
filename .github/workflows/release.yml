@@ -18,13 +18,15 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build release
       working-directory: ./Linux
-      run: make && mv tsl ${{ env.LINUX_APP_NAME }}
+      run: make
+
     - name: Upload release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref }}
-        file: ./Linux/${{ env.LINUX_APP_NAME }}
+        file: ./Linux/tsl
+        asset_name: ${{ env.LINUX_APP_NAME }}
         overwrite: true
 
   build-macos:
@@ -32,15 +34,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: make && mv tsl ${{ env.MACOS_APP_NAME }}
+    - name: make
       working-directory: ./MacOSX
       run: make
+
     - name: Upload release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref }}
-        file: ./MacOSX/${{ env.MACOS_APP_NAME }}
+        file: ./MacOSX/tsl
+        asset_name: ${{ env.MACOS_APP_NAME }}
         overwrite: true
 
   build-windows:
