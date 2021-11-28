@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Navigate to Linux build
-      run: cd Linux/
     - name: make
+      working-directory: ./Linux
       run: make
