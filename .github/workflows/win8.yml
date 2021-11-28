@@ -12,7 +12,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: make
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build project
+      uses: microsoft/setup-msbuild@v1.0.1
       working-directory: ./Win8
-      run: NMAKE /f "TSLgenerator.mak"
+      run: msbuild TSLgenerator.vcxproj /p:configuration=debug
