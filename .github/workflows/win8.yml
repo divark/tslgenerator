@@ -15,10 +15,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Upgrade project
+      uses: seanmiddleditch/gha-setup-vsdevenv@master
+      working-directory: ./Win8
+      run: vsdevenv TSLgenerator.sln /Upgrade
+
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.1
-      with:
-        vs-version: '[12.0, 16.5)'
 
     - name: Build project
       working-directory: ./Win8
