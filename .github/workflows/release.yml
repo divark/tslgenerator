@@ -23,6 +23,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.ref }}
         file: ./Linux/${{ env.LINUX_APP_NAME }}
         overwrite: true
 
@@ -38,6 +39,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.ref }}
         file: ./MacOSX/${{ env.MACOS_APP_NAME }}
         overwrite: true
 
@@ -66,5 +68,6 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.ref }}
         file: ./Win8/Release/${{ env.WINDOWS_APP_NAME }}
         overwrite: true
