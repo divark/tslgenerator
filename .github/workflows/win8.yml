@@ -15,8 +15,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Upgrade project
+    - name: Setup Upgrader
       uses: seanmiddleditch/gha-setup-vsdevenv@master
+
+    - name: Upgrade project
       working-directory: ./Win8
       run: vsdevenv TSLgenerator.sln /Upgrade
 
