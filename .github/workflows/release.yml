@@ -21,9 +21,8 @@ jobs:
       run: make && mv tsl ${{ env.LINUX_APP_NAME }}
     - name: Upload release
       uses: svenstaro/upload-release-action@v2
-      working-directory: ./Linux
       with:
-        file: ${{ env.LINUX_APP_NAME }}
+        file: ./Linux/${{ env.LINUX_APP_NAME }}
 
   build-macos:
     runs-on: macOS-latest
@@ -35,9 +34,8 @@ jobs:
       run: make
     - name: Upload release
       uses: svenstaro/upload-release-action@v2
-      working-directory: ./MacOSX
       with:
-        file: ${{ env.MACOS_APP_NAME }}
+        file: ./MacOSX/${{ env.MACOS_APP_NAME }}
 
   build-windows:
     runs-on: windows-latest
@@ -62,6 +60,5 @@ jobs:
 
     - name: Upload release
       uses: svenstaro/upload-release-action@v2
-      working-directory: ./Win8/Release
       with:
-        file: ${{ env.WINDOWS_APP_NAME }}
+        file: ./Win8/Release/${{ env.WINDOWS_APP_NAME }}
