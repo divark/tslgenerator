@@ -15,7 +15,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Build project
+    - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.1
+
+    - name: Build project
       working-directory: ./Win8
       run: msbuild TSLgenerator.vcxproj /p:configuration=debug
