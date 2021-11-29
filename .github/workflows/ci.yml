@@ -20,9 +20,9 @@ jobs:
       run: mkdir build
 
     - name: Run CMake
-      working_directory: ./build
+      working-directory: ./build
       run: cmake ../
 
     - name: Build Project
-      working_directory: ./build
+      working-directory: ./build
       run: cmake --build .
