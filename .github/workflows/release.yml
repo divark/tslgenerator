@@ -85,6 +85,6 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref }}
-        file: ./build/tsl
+        file: ./build/Release/tsl.exe
         asset_name: ${{ env.WINDOWS_APP_NAME }}
         overwrite: true
